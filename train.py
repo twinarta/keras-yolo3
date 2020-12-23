@@ -261,9 +261,7 @@ def _main_(args):
         steps_per_epoch  = len(train_generator) * config['train']['train_times'], 
         epochs           = config['train']['nb_epochs'] + config['train']['warmup_epochs'], 
         verbose          = 2 if config['train']['debug'] else 1,
-        callbacks        = callbacks, 
-        workers          = 4,
-        max_queue_size   = 8
+        callbacks        = callbacks
     )
 
     # make a GPU version of infer_model for evaluation
